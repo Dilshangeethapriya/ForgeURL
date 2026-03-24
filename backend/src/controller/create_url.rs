@@ -1,8 +1,8 @@
 use axum::{Json, extract::State, http::StatusCode, response::IntoResponse};
-use shared::types::{Db, GetUrlResponse, ShortenRequest};
+use shared::types::{GetUrlResponse, ShortenRequest};
 use rand::{distributions::Alphanumeric, Rng};
 use sqlite::{Connection, State as SqliteState};
-
+use crate::Db;
 // generating a  random 6 charactor(alphanumeric) string for short_code
 fn generate_short_code() -> String { 
     rand::thread_rng()

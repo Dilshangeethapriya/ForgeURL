@@ -1,6 +1,6 @@
 use axum::{Json, extract::{State, Path}, http::StatusCode, response::IntoResponse};
-use shared::types::{Db};
 use sqlite::State as SqliteState;
+use crate::Db;
 
 pub async fn delete_url(Path(short_code): Path<String>,State(db): State<Db>) -> impl IntoResponse {
 

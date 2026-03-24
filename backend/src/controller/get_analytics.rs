@@ -1,7 +1,7 @@
 use axum::{Json, extract::{State}, http::StatusCode, response::IntoResponse};
-use shared::types::{Db, GetUrlResponse, AnalyticsResponse};
+use shared::types::{GetUrlResponse, AnalyticsResponse};
 use sqlite::{ State as SqliteState};
-
+use crate::Db;
 
 pub async fn get_analytics( State(db): State<Db>) -> impl IntoResponse {
   let connection = match db.lock(){

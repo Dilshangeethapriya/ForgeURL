@@ -1,0 +1,264 @@
+:root {
+  --bs-body-font-family: "Montserrat", Helvetica, Arial, sans-serif;
+  --forge-bg: #f2f0ef;
+  --forge-surface: #ffffff;
+  --forge-text: #0f172a;
+  --forge-text-muted: #475569;
+  --forge-primary: #3b82f6;
+  --forge-primary-light: #5793f5;
+  /* --forge-secondary: #2dd4bf;
+  --forge-secondary-light: #6dddce; */
+  --forge-border: #e5e7eb;
+  --forge-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+  --forge-transition: all 0.5s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  line-height: 1.7;
+  background-color: var(--forge-bg);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 600;
+}
+
+.navbar {
+  background-color: var(--forge-bg);
+  box-shadow: var(--forge-shadow);
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-weight: 500;
+  color: var(--forge-text);
+}
+
+.navbar-nav .nav-item .nav-link.active {
+  font-weight: 500;
+  color: var(--forge-primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--forge-primary);
+  transition: var(--forge-transition);
+}
+
+a:hover {
+  color: var(--forge-primary-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-padding {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.header-logo {
+  max-width: 250px;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 0;
+}
+
+.btn-brand {
+  background-color: var(--forge-primary);
+  border-width: 2px;
+  border-color: var(--forge-primary);
+  color: white;
+}
+
+.btn-brand:hover {
+  background-color: var(--forge-primary-light);
+  border-width: 2px;
+  border-color: var(--forge-primary-light);
+  color: white;
+}
+
+.hero-container {
+  background:
+    linear-gradient(rgba(226, 232, 238, 0.5), rgba(226, 232, 238, 0.5)),
+    url("../images/hero_img.jpg");
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+.features-card {
+  box-shadow: var(--forge-shadow);
+  background-color: #e6fbff;
+}
+
+@media (min-width: 576px) {
+  .hero-container {
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(15, 23, 42, 0.15);
+    background:
+      linear-gradient(rgba(226, 232, 238, 0.5), rgba(226, 232, 238, 0.5)),
+      url("../images/hero_img.jpg");
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+  }
+}
+/* 
+@media (min-width: 992px) { 
+  
+} */
+
+.footer {
+  background-color: #020617;
+  color: #cbd5f5;
+  padding-top: 100px;
+}
+
+.f-top {
+  padding-bottom: 48px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.f-bottom {
+  padding: 32px 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.footer img {
+  max-width: 220px;
+}
+
+.footer-desc {
+  color: #94a3b8;
+  max-width: 90%;
+}
+
+.footer-title {
+  color: #f8fafc;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+
+.footer .line {
+  width: 40px;
+  height: 3px;
+  background-color: var(--forge-primary);
+  margin: 12px 0 20px;
+}
+
+.footer-links,
+.footer-tech {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li,
+.footer-tech li {
+  margin-bottom: 8px;
+  color: #94a3b8;
+}
+
+.footer-links a {
+  color: #93c5fd;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #bfdbfe;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+}
+
+.social-links a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  font-size: 1.25rem;
+  color: #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #93c5fd;
+  transform: translateY(-2px);
+  color: white;
+}
+/* ------------- Home ----------- */
+.copy-btn {
+  border: none;
+  color: var(--forge-primary);
+  transition: var(--forge-transition);
+}
+
+.copy-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: var(--forge-primary-light);
+}
+
+.copy-btn i {
+  transition: opacity 0.5s ease;
+}
+
+/* ------------- Dashboard ----------- */
+
+.counts-card {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/*----------------- API Docs------------ */
+
+.api-hero {
+  background: linear-gradient(135deg, #020617, #424550);
+  color: #e5e7eb;
+}
+
+.api-hero p {
+  color: var(--forge-primary);
+}
+
+.api-card {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.code-box {
+  background: #020617;
+  color: #93c5fd;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+code {
+  color: var(--forge-primary);
+}

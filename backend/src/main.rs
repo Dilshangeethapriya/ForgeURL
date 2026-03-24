@@ -1,6 +1,12 @@
 use std::sync::{Arc, Mutex};
 use axum::{Router, routing::{get, post, put, delete}};
-use shared::types::Db;
+use sqlite::Connection;
+use tower_http::cors::{CorsLayer, Any};
+use axum::http::Method; 
+
+
+
+pub type Db = Arc<Mutex<Connection>>;
 
 use crate::controller::
     {
@@ -24,6 +30,12 @@ let db_path = std::env::var("DATABASE_URL").unwrap_or_else(|_| {
 let connection = sqlite::open(&db_path).unwrap();
 println!("Database opened at: {}", db_path);
    let db: Db = Arc::new(Mutex::new(connection));
+
+  let cors = CorsLayer::new()
+        .allow_origin(Any)
+        .allow_methods([Method::GET, Method::POST, Method::PUT, Method::DELETE])
+        .allow_headers(Any); 
+
    
    
    let app = Router::new().route("/", post(create_url))
@@ -33,9 +45,11 @@ println!("Database opened at: {}", db_path);
                                   .route("/search", get(search_url))
                                   .route("/analytics", get(get_analytics))
                                   // TODO: add rate limiting before deployment
-                                  .with_state(db);
+                                  .with_state(db)
+                                  .layer(cors);
 
    let listener = tokio::net::TcpListener::bind("0.0.0.0:7878").await.unwrap();
 
+   println!("Server running on http://localhost:7878");
    axum::serve(listener, app).await.unwrap();
 }

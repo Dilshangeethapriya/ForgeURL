@@ -1,7 +1,7 @@
 use axum::{Json, extract::{Query, State}, http::StatusCode, response::IntoResponse};
-use shared::types::{Db, GetUrlResponse, SearchQuery};
+use shared::types::{ GetUrlResponse, SearchQuery};
 use sqlite::{ State as SqliteState};
-
+use crate::Db;
 
 pub async fn search_url(State(db): State<Db>,Query(search_query): Query<SearchQuery>) -> impl IntoResponse {
   let connection = match db.lock(){
