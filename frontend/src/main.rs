@@ -3,6 +3,7 @@ use yew_router::prelude::*;
 
 mod components;
 mod pages;
+mod api;
 
 use pages::{
     home::Home,

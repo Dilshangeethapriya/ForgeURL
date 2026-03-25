@@ -5,6 +5,7 @@ use crate::components::{navbar::Navbar, footer::Footer, recent_links_item::Recen
 use shared::types::{AnalyticsResponse, GetUrlResponse};
 use gloo_timers::callback::Timeout;
 use web_sys::HtmlInputElement;
+use crate::api::API_BASE;
 
 #[function_component(Dashboard)]
 pub fn dashboard() -> Html {
@@ -22,7 +23,7 @@ pub fn dashboard() -> Html {
  
         use_effect_with((), move |_| {
             spawn_local(async move {
-                match Request::get("http://localhost:7878/analytics")
+                match Request::get(&format!("{}/analytics", API_BASE))
                     .send()
                     .await
                 {
@@ -73,7 +74,8 @@ pub fn dashboard() -> Html {
               let search_loading = search_loading.clone();
               spawn_local(async move {
                   let url = format!(
-                      "http://localhost:7878/search?search_string={}",
+                      "{}/search?search_string={}",
+                      API_BASE,
                       query.trim()
                   );
                   match Request::get(&url).send().await {

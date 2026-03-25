@@ -5,6 +5,7 @@ use wasm_bindgen_futures::spawn_local;
 use web_sys::HtmlInputElement;
 use shared::types::{ShortenRequest, GetUrlResponse};
 use gloo_timers::callback::Timeout;
+use crate::api::API_BASE;
 
 #[function_component(Home)]
 pub fn home() -> Html {
@@ -56,7 +57,7 @@ pub fn home() -> Html {
             spawn_local(async move {
                 let body = ShortenRequest { original_url: url };
 
-                match Request::post("http://localhost:7878/")
+                match Request::post(&format!("{}/", API_BASE))
                     .header("Content-Type", "application/json")
                     .json(&body)
                     .unwrap()
