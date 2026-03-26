@@ -37,7 +37,7 @@ pub async fn search_url(State(db): State<Db>,Query(search_query): Query<SearchQu
         let original_url: String = statement.read(2).unwrap();
         let created_at: String = statement.read(3).unwrap();
         let click_count: i64 = statement.read(4).unwrap();
-        let short_url = format!("http://localhost:7878/{}", short_code);
+        let short_url = format!("https://forgeurl-production.up.railway.app/{}", short_code);
 
         results.push(GetUrlResponse {
             short_url,

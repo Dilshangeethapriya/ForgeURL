@@ -50,6 +50,6 @@ println!("Database opened at: {}", db_path);
 
    let listener = tokio::net::TcpListener::bind("0.0.0.0:7878").await.unwrap();
 
-   println!("Server running on http://localhost:7878");
+   println!("Server running on https://forgeurl-production.up.railway.app");
    axum::serve(listener, app).await.unwrap();
 }
