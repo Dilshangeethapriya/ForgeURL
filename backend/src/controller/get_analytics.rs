@@ -101,7 +101,7 @@ pub async fn get_analytics( State(db): State<Db>) -> impl IntoResponse {
 
      while let Ok(SqliteState::Row) = statement.next() {
         let short_code: String = statement.read(1).unwrap();
-        let short_url = format!("http://localhost:7878/{}", short_code);
+        let short_url = format!("https://forgeurl-production.up.railway.app/{}", short_code);
         popular_links.push(GetUrlResponse {
             original_url: statement.read(2).unwrap(),
             click_count: statement.read(4).unwrap(),
@@ -129,7 +129,7 @@ pub async fn get_analytics( State(db): State<Db>) -> impl IntoResponse {
 
         while let Ok(SqliteState::Row) = statement.next() {
            let short_code: String = statement.read(1).unwrap();
-           let short_url = format!("http://localhost:7878/{}", short_code);
+           let short_url = format!("https://forgeurl-production.up.railway.app/{}", short_code);
            recent_links.push(GetUrlResponse {
                original_url: statement.read(2).unwrap(),
                click_count: statement.read(4).unwrap(),

@@ -52,7 +52,7 @@ pub fn api_docs() -> Html {
                         <h6>{ "Request Body" }</h6>
                         <pre class="code-box">
                             { r#"{
-   "original_url": "https://www.example.com/your/long/url"
+   "original_url": "https://www.youtube.com/show/VLPLflqtq8EOGAKyBKc12n4dPiIAex5n4NgC?sbp=KgtIdGo0el9uQU9IMEAB"
 }"# }
                         </pre>
                         <h6>{ "Response — 200 OK" }</h6>
@@ -61,7 +61,7 @@ pub fn api_docs() -> Html {
     "short_code":   "QYFBTo",
     "short_url":    "https://forgeurl-production.up.railway.app/QYFBTo",
     "click_count":  0,
-    "original_url": "https://www.example.com/your/long/url",
+    "original_url": "https://www.youtube.com/show/VLPLflqtq8EOGAKyBKc12n4dPiIAex5n4NgC?sbp=KgtIdGo0el9uQU9IMEAB",
     "created_at":   "2026-03-24 10:00:00"
 }"# }
                         </pre>
@@ -180,8 +180,8 @@ pub fn api_docs() -> Html {
                         <pre class="code-box">
                             { r#"{
     "message": "URL deleted successfully",
-    "deleted_short_code": short_code,
-    "deleted_original_url": original_url,
+    "deleted_short_code": QYFBTo,
+    "deleted_original_url": "https://www.youtube.com/show/VLPLflqtq8EOGAKyBKc12n4dPiIAex5n4NgC?sbp=KgtIdGo0el9uQU9IMEAB",
 }"# }
                         </pre>
                         <h6>{ "Error Responses" }</h6>
@@ -219,7 +219,7 @@ pub fn api_docs() -> Html {
         "short_code":   "QYFBTo",
         "short_url":    "https://forgeurl-production.up.railway.app/QYFBTo",
         "click_count":  4,
-        "original_url": "https://www.google.com/search?q=rust",
+        "original_url": "https://www.youtube.com/show/VLPLflqtq8EOGAKyBKc12n4dPiIAex5n4NgC?sbp=KgtIdGo0el9uQU9IMEAB",
         "created_at":   "2026-03-24 10:00:00"
     }
 ]
@@ -263,7 +263,7 @@ pub fn api_docs() -> Html {
         "short_code":   "QYFBTo",
         "short_url":    "https://forgeurl-production.up.railway.app/QYFBTo",
         "click_count":  12,
-        "original_url": "https://www.google.com",
+        "original_url": "https://www.youtube.com/show/VLPLflqtq8EOGAKyBKc12n4dPiIAex5n4NgC?sbp=KgtIdGo0el9uQU9IMEAB",
         "created_at":   "2026-03-24 10:00:00"
     },
     "popular_links": [ ...GetUrlResponse[] ],

@@ -28,7 +28,7 @@ pub fn footer() -> Html {
                   href="https://www.linkedin.com/in/dilshan-geethappriya-b30530200/"
                   ><i class="bi bi-linkedin"></i
                 ></a>
-                <a href="https://www.instagram.com/dilshangeethappriya/"
+                <a href="https://www.instagram.com/dilshangeethapriya/"
                   ><i class="bi bi-instagram"></i
                 ></a>
                 <a href="https://wa.me/+94773931851"
